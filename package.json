@@ -1,0 +1,51 @@
+{
+  "name": "mornya-nuxt-ts-boilerplate",
+  "version": "1.0.0",
+  "description": "Nuxt.js + TypeScript development boilerplate",
+  "author": "mornya78@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mornya/mornya-nuxt-ts-boilerplate.git"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.ts --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production && npm run build && node server/index.ts",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx,.vue --ignore-path .gitignore .",
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "browserslist": [
+    "IE 11",
+    "last 3 versions",
+    "not IE < 11"
+  ],
+  "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/pwa": "^3.0.0-beta.19",
+    "cross-env": "^6.0.3",
+    "express": "^4.17.1",
+    "nuxt": "^2.11.0"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.5.6",
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "@nuxtjs/eslint-module": "^1.1.0",
+    "@types/jest": "^24.9.0",
+    "@vue/test-utils": "^1.0.0-beta.30",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-nuxt": "^0.5.0",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.6.2",
+    "vue-jest": "^4.0.0-0"
+  }
+}
