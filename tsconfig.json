@@ -11,7 +11,8 @@
       "node",
       "react",
       "react-dom",
-      "jest"
+      "jest",
+      "@nuxt/types"
     ],
     "lib": [
       "esnext",
@@ -32,7 +33,7 @@
     "downlevelIteration": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "allowJs": false,
+    "allowJs": true,
     "checkJs": false,
     "strict": true,
     "sourceMap": false,
@@ -45,10 +46,10 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "include": [
-    "types/**/*",
     "src/**/*"
   ],
   "exclude": [
+    "coverage",
     "src/assets",
     "static",
     "node_modules",
