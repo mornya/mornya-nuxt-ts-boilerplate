@@ -8,15 +8,20 @@ module.exports = {
     jest: true, // Set globally because it is not applied to overrides
   },
   extends: [
-    '@nuxtjs',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:vue/base',
     'plugin:nuxt/recommended',
+    '@vue/standard',
+    '@vue/typescript',
+    '@nuxtjs',
   ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
   parserOptions: {
-    parser: 'babel-eslint',
+    parser: '@typescript-eslint/parser',
     ecmaFeatures: {
       jsx: true,
     },
@@ -24,8 +29,8 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'standard',
     'vue',
+    '@typescript-eslint',
   ],
   // add your custom rules here
   rules: {
@@ -42,6 +47,8 @@ module.exports = {
     'semi': 'off',
     'spaced-comment': 'off',
     'yoda': 'off',
+    // for ts
+    '@typescript-eslint/indent': ['error', 2],
     // for vue
     'vue/attribute-hyphenation': 'off',
     'vue/html-closing-bracket-spacing': 'off',

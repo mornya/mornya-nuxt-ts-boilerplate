@@ -9,8 +9,6 @@
     ],
     "types": [
       "node",
-      "react",
-      "react-dom",
       "jest",
       "@nuxt/types"
     ],
