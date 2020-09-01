@@ -1,21 +1,58 @@
 {
   "name": "mornya-nuxt-ts-boilerplate",
-  "version": "1.0.0",
-  "description": "Nuxt.js + TypeScript development boilerplate",
-  "author": "mornya78@gmail.com",
+  "version": "2.0.0",
+  "description": "Nuxt.js & TypeScript development boilerplate",
+  "homepage": "https://markup.wonders.app",
   "license": "MIT",
+  "author": "mornya <mornya78@gmail.com>",
   "private": true,
   "repository": {
     "type": "git",
     "url": "http://github.com/mornya/mornya-nuxt-ts-boilerplate.git"
   },
+  "bugs": "http://github.com/mornya/mornya-nuxt-ts-boilerplate/issues",
+  "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.ts --watch server",
-    "build": "nuxt build",
+    "postinstall": "lintest install || exit 0",
+    "postuninstall": "lintest install || exit 0",
+    "serve": "cross-env NODE_ENV=development nuxt",
+    "dev": "cross-env NODE_ENV=development nuxt",
+    "production": "cross-env NODE_ENV=production nuxt",
+    "start:dev": "cross-env NODE_ENV=development nodemon server/index.ts --watch server",
     "start": "cross-env NODE_ENV=production && npm run build && node server/index.ts",
+    "build": "nuxt build",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .ts,.tsx,.js,.jsx,.vue --ignore-path .gitignore .",
-    "test": "jest --color --coverage --passWithNoTests --noStackTrace"
+    "lint": "lintest lint",
+    "lint:fix": "lintest lint fix",
+    "test": "lintest test",
+    "test:watch": "lintest test watch",
+    "test:coverage": "lintest test coverage"
+  },
+  "dependencies": {
+    "@mornya/restful-libs": "^2.0.4",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/pwa": "^3.0.2",
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "nuxt": "^2.14.4",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-events": "^3.1.0",
+    "vue-lazyload": "^1.3.3",
+    "vue-progressbar": "^0.7.5",
+    "vuex": "^3.5.1"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.14.4",
+    "@nuxt/typescript-build": "^2.0.2",
+    "@types/jest": "^26.0.12",
+    "@types/node": "^14.6.2",
+    "@types/webpack-env": "^1.15.2",
+    "@vue/test-utils": "^1.0.5",
+    "husky": "^4.2.5",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "sass-loader": "^10.0.1",
+    "typescript": "^4.0.2"
   },
   "engines": {
     "node": ">=10",
@@ -26,37 +63,9 @@
     "last 3 versions",
     "not IE < 11"
   ],
-  "dependencies": {
-    "@nuxtjs/dotenv": "^1.4.1",
-    "@nuxtjs/pwa": "^3.0.0-beta.20",
-    "cross-env": "^7.0.2",
-    "express": "^4.17.1",
-    "nuxt": "^2.12.1"
-  },
-  "devDependencies": {
-    "@nuxt/typescript-build": "^0.6.1",
-    "@nuxtjs/eslint-config": "^2.0.2",
-    "@nuxtjs/eslint-module": "^1.1.0",
-    "@types/jest": "^25.1.4",
-    "@typescript-eslint/eslint-plugin": "^2.25.0",
-    "@typescript-eslint/parser": "^2.25.0",
-    "@vue/composition-api": "^0.5.0",
-    "@vue/eslint-config-standard": "^5.1.2",
-    "@vue/eslint-config-typescript": "^5.0.2",
-    "@vue/test-utils": "^1.0.0-beta.32",
-    "babel-eslint": "^10.1.0",
-    "babel-jest": "^25.2.4",
-    "eslint": "^6.8.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-nuxt": "^0.5.2",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "eslint-plugin-vue": "^6.2.2",
-    "jest": "^25.2.4",
-    "jest-transform-stub": "^2.0.0",
-    "nodemon": "^2.0.2",
-    "ts-node": "^8.8.1",
-    "vue-jest": "^4.0.0-0"
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
   }
 }

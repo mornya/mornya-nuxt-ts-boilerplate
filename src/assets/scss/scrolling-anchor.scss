@@ -1,0 +1,33 @@
+.scrolling-anchor {
+  display: block;
+
+  & > * {
+    display: inherit;
+    -webkit-transition: all ease-in-out 1s;
+    transition: all ease-in-out 1s;
+
+    &.sa-attached {
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      right: 0;
+      background-color: rgba(#fff, 1);
+      -webkit-transition: all ease-in-out 1s;
+      transition: all ease-in-out 1s;
+
+      &.sa-top {
+        &.sa-last {
+          background-color: rgba(#fff, 1);
+          box-shadow: rgba(0, 0, 0, .4) 0 1px 4px;
+        }
+      }
+
+      &.sa-bottom {
+        &.sa-last {
+          background-color: rgba(#fff, 1);
+          box-shadow: rgba(0, 0, 0, .4) 0 -1px 4px;
+        }
+      }
+    }
+  }
+}

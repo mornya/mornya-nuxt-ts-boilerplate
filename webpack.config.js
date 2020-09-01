@@ -5,15 +5,15 @@
  *
  * Preferences > Languages & Frameworks > JavaScript > Webpack
  */
-const path = require('path')
+const srcPath = require('path').resolve(__dirname, 'src')
 
 module.exports = {
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      '~': path.resolve(__dirname, 'src'),
-      '@@': path.resolve(__dirname, 'src'),
-      '~~': path.resolve(__dirname, 'src')
-    }
-  }
+      '@': srcPath,
+      '~': srcPath,
+      '@@': srcPath,
+      '~~': srcPath,
+    },
+  },
 }

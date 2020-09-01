@@ -34,4 +34,4 @@ async function start () {
   });
 }
 
-start().finally();
+start().catch(err => console.error(err));

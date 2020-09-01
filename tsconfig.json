@@ -5,18 +5,20 @@
     "target": "es5",
     "typeRoots": [
       "./node_modules/@types",
-      "./src/types"
+      "./types"
     ],
     "types": [
-      "node",
+      "@nuxt/types",
       "jest",
-      "@nuxt/types"
+      "node",
+      "webpack-env"
     ],
     "lib": [
       "esnext",
       "esnext.asynciterable",
       "dom",
-      "dom.iterable"
+      "dom.iterable",
+      "scripthost"
     ],
     "paths": {
       "@/*": ["./src/*"],
@@ -26,9 +28,10 @@
     "baseUrl": ".",
     "outDir": "./dist/",
     "jsx": "preserve",
-    "declaration": true,
+    "declaration": false,
     "esModuleInterop": true,
     "downlevelIteration": true,
+    "importHelpers": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "allowJs": true,
@@ -44,15 +47,22 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "include": [
-    "src/**/*"
+    "layouts/**/*",
+    "middleware/**/*",
+    "pages/**/*",
+    "src/**/*",
+    "test/**/*",
+    "types/**/*"
   ],
   "exclude": [
     "coverage",
+    "dist",
+    "node_modules",
     "src/assets",
     "static",
-    "node_modules",
     ".idea",
     ".git",
+    ".netlify",
     ".nuxt"
   ]
 }

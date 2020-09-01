@@ -2,12 +2,8 @@
   <div class="container">
     <div>
       <logo/>
-      <h1 class="title">
-        {{ title }}
-      </h1>
-      <h2 class="subtitle">
-        {{ subtitle }}
-      </h2>
+      <h1 class="title">{{ title }}</h1>
+      <h2 class="subtitle">{{ subtitle }}</h2>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -16,6 +12,7 @@
         >
           Documentation
         </a>
+        &nbsp;
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
@@ -29,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import Logo from '@/components/Logo.vue';
+import Logo from '@/components/Logo';
 
 export default {
   components: {
@@ -37,10 +34,10 @@ export default {
   },
   computed: {
     title () {
-      return process.env.VUE_APP_NAME;
+      return process.env.APP_NAME_SHORT;
     },
     subtitle () {
-      return process.env.VUE_APP_DESCRIPTION;
+      return process.env.APP_DESCRIPTION;
     },
   },
 };
