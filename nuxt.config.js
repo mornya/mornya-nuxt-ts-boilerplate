@@ -74,9 +74,10 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    //'@nuxtjs/pwa',
+    '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     //'@nuxtjs/dotenv'
+    ['@nuxtjs/component-cache', { maxAge: 1000 * 60 * 60 }],
   ],
   /*
    ** Loaders

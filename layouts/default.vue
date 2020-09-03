@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import ApplicationProvider from '~/components/application/ApplicationProvider'
+import ApplicationProvider from '@/components/application/ApplicationProvider'
 
 export default {
   name: 'DefaultLayout',
